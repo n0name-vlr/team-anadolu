@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Anadolu (TANU) | Biz Kimiz</title>
+    <!-- Beyaz Parlama (Flash) Önleme Scripti -->
+    <script>
+        const savedTheme = localStorage.getItem('tanu_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <!-- Google Fonts: Rajdhani & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome (Sosyal Medya Logoları İçin) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Menü (Navbar) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TANU</span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="kadrolar.html" data-tr="Kadrolar" data-en="Rosters">Kadrolar</a>
+                <a href="hakkimizda.html" class="active" data-tr="Biz Kimiz" data-en="About Us">Biz Kimiz</a>
+                <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+            </nav>
+
+            <!-- Sağ Üst Kontroller -->
+            <div class="nav-controls">
+                <button id="theme-toggle" class="control-btn" title="Tema Değiştir">🌙</button>
+                
+                <div class="lang-dropdown">
+                    <button id="lang-btn" class="control-btn">TR ▾</button>
+                    <div class="lang-menu" id="lang-menu">
+                        <a href="#" data-lang="tr">Türkçe</a>
+                        <a href="#" data-lang="en">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hakkımızda (Biz Kimiz) Ana İçerik Alanı -->
+    <main class="about-page">
+        <div class="container">
+            <h1 class="page-title" data-tr="BİZ KİMİZ?" data-en="ABOUT US">BİZ KİMİZ?</h1>
+            <p class="about-subtitle" data-tr="Team Anadolu'nun (TANU) yazılımdan espora uzanan hikayesi." data-en="The story of Team Anadolu (TANU) from software to esports.">Team Anadolu'nun (TANU) yazılımdan espora uzanan hikayesi.</p>
+
+            <!-- Kronolojik Zaman Tüneli -->
+            <div class="timeline-container">
+                
+                <!-- 2024 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h3 data-tr="Kuruluş" data-en="Foundation">Kuruluş</h3>
+                        <p data-tr="TANU, ilk olarak bir yazılım organizasyonu olarak kuruldu." data-en="TANU was originally established as a software organization.">TANU, ilk olarak bir yazılım organizasyonu olarak kuruldu.</p>
+                    </div>
+                </div>
+
+                <!-- 2024 Aralık -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024 Aralık</span>
+                        <h3 data-tr="İlk VALORANT Kadrosu" data-en="First VALORANT Roster">İlk VALORANT Kadrosu</h3>
+                        <p data-tr="TANU, ilk VALORANT kadrosunu oluşturdu." data-en="TANU formed its first VALORANT roster.">TANU, ilk VALORANT kadrosunu oluşturdu.</p>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2025</span>
+                        <h3 data-tr="Talents Ekibi" data-en="Talents Team">Talents Ekibi</h3>
+                        <p data-tr="TANU Talents Ekibi kuruldu." data-en="The TANU Talents team was established.">TANU Talents Ekibi kuruldu.</p>
+                    </div>
+                </div>
+
+                <!-- 2025 Sonları -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2025 Sonları</span>
+                        <h3 data-tr="Gelişim Kadrosu" data-en="Development Roster">Gelişim Kadrosu</h3>
+                        <p data-tr="TANU Gelişim Kadrosu aktif oldu ve bugüne kadar yüzlerce kişi yetiştirdi." data-en="The TANU Development roster became active and has trained hundreds of people to date.">TANU Gelişim Kadrosu aktif oldu ve bugüne kadar yüzlerce kişi yetiştirdi.</p>
+                    </div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2026</span>
+                        <h3 data-tr="Bugünkü Halimiz" data-en="Our Current State">Bugünkü Halimiz</h3>
+                        <p data-tr="TANU bugünkü haline ulaştı ve daha ileriye gitmeyi hedefliyor." data-en="TANU has reached its current state and aims to go even further.">TANU bugünkü haline ulaştı ve daha ileriye gitmeyi hedefliyor.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TANU</div>
+            <p class="footer-email">iletisim.teamanadolu@gmail.com</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/teamanadolu_/" target="_blank" class="social-icon" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/TeamAnadolu_" target="_blank" class="svg-social-icon" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2026 Team Anadolu (TANU)</p>
+        </div>
+    </footer>
+
+    <!-- Kalıcı Tema ve Dil Scripti -->
+    <script>
+        const htmlElement = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const langBtn = document.getElementById('lang-btn');
+        const langMenu = document.getElementById('lang-menu');
+
+        const currentTheme = localStorage.getItem('tanu_theme') || 'light';
+        const currentLang = localStorage.getItem('tanu_lang') || 'tr';
+
+        htmlElement.setAttribute('data-theme', currentTheme);
+        if (themeToggle) {
+            themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+        if (currentLang === 'en') {
+            setLanguage('en');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const activeTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+                localStorage.setItem('tanu_theme', newTheme);
+            });
+        }
+
+        if (langBtn && langMenu) {
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            window.addEventListener('click', () => {
+                langMenu.style.display = 'none';
+            });
+
+            document.querySelectorAll('.lang-menu a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedLang = e.target.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    localStorage.setItem('tanu_lang', selectedLang);
+                });
+            });
+        }
+
+        function setLanguage(lang) {
+            if (langBtn) {
+                langBtn.textContent = lang.toUpperCase() + ' ▾';
+            }
+            document.querySelectorAll('[data-tr]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.textContent = text;
+            });
+        }
+    </script>
+</body>
+</html>

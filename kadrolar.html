@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Anadolu (TANU) | Kadrolar</title>
+    <!-- Beyaz Parlama (Flash) Önleme Scripti -->
+    <script>
+        const savedTheme = localStorage.getItem('tanu_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <!-- Google Fonts: Rajdhani & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome (Sosyal Medya Logoları İçin) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Menü (Navbar) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TANU</span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="index.html" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="kadrolar.html" class="active" data-tr="Kadrolar" data-en="Rosters">Kadrolar</a>
+                <a href="hakkimizda.html" data-tr="Biz Kimiz" data-en="About Us">Biz Kimiz</a>
+                <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+            </nav>
+
+            <!-- Sağ Üst Kontroller -->
+            <div class="nav-controls">
+                <button id="theme-toggle" class="control-btn" title="Tema Değiştir">🌙</button>
+                
+                <div class="lang-dropdown">
+                    <button id="lang-btn" class="control-btn">TR ▾</button>
+                    <div class="lang-menu" id="lang-menu">
+                        <a href="#" data-lang="tr">Türkçe</a>
+                        <a href="#" data-lang="en">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Kadrolar Ana İçerik Alanı -->
+    <main class="rosters-page">
+        <div class="container">
+            <h1 class="page-title" data-tr="TAKIM KADROLARI" data-en="TEAM ROSTERS">TAKIM KADROLARI</h1>
+
+            <!-- Çift Sütunlu Bağımsız Kart Yapısı -->
+            <div class="rosters-grid-layout">
+                
+                <!-- Sol Sütun: Talents -->
+                <div class="roster-column">
+                    <h2 class="section-sub-heading" data-tr="Talents" data-en="Talents">Talents</h2>
+                    
+                    <!-- Valient -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>Valient</h3>
+                            <span class="member-tag" data-tr="Talents" data-en="Talents">Talents</span>
+                        </div>
+                        <p class="member-role" data-tr="Content Creator" data-en="Content Creator">Content Creator</p>
+                        <div class="member-socials">
+                            <a href="https://www.instagram.com/teamanadolu_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- ScoRs -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>ScoRs</h3>
+                            <span class="member-tag" data-tr="Talents" data-en="Talents">Talents</span>
+                        </div>
+                        <p class="member-role" data-tr="Content Creator" data-en="Content Creator">Content Creator</p>
+                        <div class="member-socials">
+                            <a href="https://www.instagram.com/teamanadolu_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- n0mad -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>n0mad</h3>
+                            <span class="member-tag" data-tr="Talents" data-en="Talents">Talents</span>
+                        </div>
+                        <p class="member-role" data-tr="Content Creator" data-en="Content Creator">Content Creator</p>
+                        <div class="member-socials">
+                            <a href="https://www.instagram.com/teamanadolu_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- n0name -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>n0name</h3>
+                            <span class="member-tag" data-tr="Talents" data-en="Talents">Talents</span>
+                        </div>
+                        <p class="member-role" data-tr="Content Creator" data-en="Content Creator">Content Creator</p>
+                        <div class="member-socials">
+                            <a href="https://www.instagram.com/teamanadolu_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://x.com/n0name_vlr" target="_blank" title="X" class="svg-social-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.twitch.tv/n0name_vlr" target="_blank"><i class="fab fa-twitch"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Sütun: Gelişim, Yazılım ve Valorant Başvuru -->
+                <div class="roster-column">
+                    
+                    <!-- Gelişim Bölümü -->
+                    <h2 class="section-sub-heading" data-tr="Gelişim" data-en="Development">Gelişim</h2>
+
+                    <!-- ScoRs (Koç) -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>ScoRs</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Koç" data-en="Coach">Koç</p>
+                    </div>
+
+                    <!-- Valient -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>Valient</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu" data-en="Player">Oyuncu</p>
+                    </div>
+
+                    <!-- Rynox -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>Rynox</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu" data-en="Player">Oyuncu</p>
+                    </div>
+
+                    <!-- Babykkc -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>Babykkc</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu" data-en="Player">Oyuncu</p>
+                    </div>
+
+                    <!-- n0mad -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>n0mad</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu" data-en="Player">Oyuncu</p>
+                    </div>
+
+                    <!-- Pundik -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>Pundik</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu" data-en="Player">Oyuncu</p>
+                    </div>
+
+                    <!-- Gomen -->
+                    <div class="member-card">
+                        <div class="member-info">
+                            <h3>Gomen</h3>
+                            <span class="member-tag" data-tr="Gelişim" data-en="Development">Gelişim</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu" data-en="Player">Oyuncu</p>
+                    </div>
+
+                    <!-- Yazılım Bölümü -->
+                    <h2 class="section-sub-heading" style="margin-top: 1.5rem;" data-tr="Yazılım" data-en="Software">Yazılım</h2>
+                    
+                    <div class="software-row">
+                        <!-- n0name -->
+                        <div class="member-card software-card">
+                            <div class="member-info">
+                                <h3>n0name</h3>
+                                <span class="member-tag" data-tr="Yazılım" data-en="Software">Yazılım</span>
+                            </div>
+                            <p class="member-role" data-tr="Developer" data-en="Developer">Developer</p>
+                        </div>
+
+                        <!-- ASDAS -->
+                        <div class="member-card software-card">
+                            <div class="member-info">
+                                <h3>ASDAS</h3>
+                                <span class="member-tag" data-tr="Yazılım" data-en="Software">Yazılım</span>
+                            </div>
+                            <p class="member-role" data-tr="Developer" data-en="Developer">Developer</p>
+                        </div>
+                    </div>
+
+                    <!-- Valorant Takımı Başvuru Kartı -->
+                    <div class="member-card recruitment-card" style="margin-top: 1rem;">
+                        <div class="member-info">
+                            <h3 data-tr="Valorant Takımı" data-en="Valorant Team">Valorant Takımı</h3>
+                            <span class="member-tag" data-tr="Aktif" data-en="Active">Aktif</span>
+                        </div>
+                        <p class="member-role" data-tr="Oyuncu alımları devam ediyor!" data-en="Player recruitment is ongoing!">Oyuncu alımları devam ediyor!</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScHS2tJCH_Fv9PE39IuQd4fcLVHvRbhFq38fPBQPgqcYipY4w/viewform?usp=sharing&ouid=117029608807832574812" target="_blank" class="apply-btn" data-tr="Başvuru Formu" data-en="Application Form">Başvuru Formu →</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TANU</div>
+            <p class="footer-email">iletisim.teamanadolu@gmail.com</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/teamanadolu_/" target="_blank" class="social-icon" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/TeamAnadolu_" target="_blank" class="svg-social-icon" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2026 Team Anadolu (TANU)</p>
+        </div>
+    </footer>
+
+    <!-- Kalıcı Tema ve Dil Scripti -->
+    <script>
+        const htmlElement = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const langBtn = document.getElementById('lang-btn');
+        const langMenu = document.getElementById('lang-menu');
+
+        const currentTheme = localStorage.getItem('tanu_theme') || 'light';
+        const currentLang = localStorage.getItem('tanu_lang') || 'tr';
+
+        htmlElement.setAttribute('data-theme', currentTheme);
+        if (themeToggle) {
+            themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+        if (currentLang === 'en') {
+            setLanguage('en');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const activeTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+                localStorage.setItem('tanu_theme', newTheme);
+            });
+        }
+
+        if (langBtn && langMenu) {
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            window.addEventListener('click', () => {
+                langMenu.style.display = 'none';
+            });
+
+            document.querySelectorAll('.lang-menu a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedLang = e.target.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    localStorage.setItem('tanu_lang', selectedLang);
+                });
+            });
+        }
+
+        function setLanguage(lang) {
+            if (langBtn) {
+                langBtn.textContent = lang.toUpperCase() + ' ▾';
+            }
+            document.querySelectorAll('[data-tr]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.textContent = text;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+/* --- Renk Paleti --- */
+:root {
+    --bg-color: #f8fafc;
+    --surface-color: #ffffff;
+    --border-color: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent-green: #16a34a;
+    --accent-red: #dc2626;
+    --accent-blue: #2563eb;
+}
+
+[data-theme="dark"] {
+    --bg-color: #111318;       
+    --surface-color: #1a1d24;  
+    --border-color: #2a2f3d;
+    --text-main: #ffffff;
+    --text-muted: #a3a3a3;
+    --accent-green: #22c55e;
+    --accent-red: #ef4444;
+    --accent-blue: #3b82f6;
+}
+
+/* --- Genel Reset & Fontlar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+h1, .logo-text, .footer-logo, .control-btn, .category-heading, .section-sub-heading {
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+}
+
+/* --- Üst Menü (Navbar) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--accent-green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
+}
+
+/* --- Sağ Üst Kontroller ve Açılır Menü --- */
+.nav-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.control-btn {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.control-btn:hover {
+    border-color: var(--accent-green);
+}
+
+.lang-dropdown {
+    position: relative;
+}
+
+.lang-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 115%;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    min-width: 90px;
+}
+
+.lang-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.lang-menu a:hover {
+    background-color: var(--border-color);
+    color: var(--accent-green);
+}
+
+/* --- Hero & Index Sayfası Stilleri --- */
+.hero-section {
+    min-height: calc(100vh - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 2rem 2rem;
+}
+
+.hero-container {
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-header h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, var(--text-main) 40%, var(--accent-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-btn {
+    display: inline-block;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 2.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.about-btn:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+/* Slider / Focus Animasyonu */
+.roster-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    height: 260px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.roster-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    position: absolute;
+    width: 300px;
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease, border-color 0.4s ease;
+}
+
+.roster-card.active {
+    transform: translateX(0) scale(1.1);
+    z-index: 10;
+    opacity: 1;
+    border-color: var(--accent-green);
+    box-shadow: 0 20px 40px rgba(22, 163, 74, 0.15);
+    filter: none;
+}
+
+.roster-card.left {
+    transform: translateX(-310px) scale(0.85);
+    z-index: 5;
+    opacity: 0.4;
+    filter: blur(1px);
+}
+
+.roster-card.right {
+    transform: translateX(310px) scale(0.85);
+    z-index: 5;
+    opacity: 0.4;
+    filter: blur(1px);
+}
+
+.roster-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* --- Biz Kimiz (Index Sayfası Alt Bölüm & About Sayfası) --- */
+.about-section {
+    padding: 5rem 2rem 7rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.about-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+    margin: 0.75rem auto 0 auto;
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* --- Kadrolar Sayfası Stilleri --- */
+.rosters-page {
+    padding: 9rem 2rem 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.rosters-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.roster-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section-sub-heading {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+    border-left: 4px solid var(--accent-green);
+    padding-left: 0.75rem;
+}
+
+.member-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.member-card:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.software-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.software-card {
+    width: 100%;
+}
+
+.member-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.member-info h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.member-tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    color: var(--accent-green);
+}
+
+.member-role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.member-socials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.2rem;
+    align-items: center;
+}
+
+.member-socials a, .member-socials .svg-social-icon {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-socials a:hover, .member-socials .svg-social-icon:hover {
+    color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.member-socials .svg-social-icon svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    transition: transform 0.2s ease;
+}
+
+.recruitment-card {
+    background: linear-gradient(135deg, var(--surface-color), var(--bg-color));
+    border-color: var(--accent-green);
+    text-align: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.apply-btn {
+    display: inline-block;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background-color: var(--accent-green);
+    padding: 0.45rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 0.4rem;
+    transition: opacity 0.2s ease;
+}
+
+.apply-btn:hover {
+    opacity: 0.9;
+}
+
+/* --- Hakkımızda Sayfası & Zaman Tüneli --- */
+.about-page {
+    padding: 9rem 2rem 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: calc(-2rem - 8px);
+    top: 0.3rem;
+    width: 14px;
+    height: 14px;
+    background-color: var(--accent-green);
+    border-radius: 50%;
+    border: 3px solid var(--surface-color);
+    box-shadow: 0 0 0 2px var(--accent-green);
+}
+
+.timeline-content {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.timeline-content:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.timeline-year {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+    color: var(--text-main);
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--accent-green);
+}
+
+.footer-email {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-icon, .footer-content .svg-social-icon {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover, .footer-content .svg-social-icon:hover {
+    color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.footer-content .svg-social-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+}
+
+footer p:last-child {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .roster-carousel {
+        height: auto;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .roster-card {
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        width: 100%;
+    }
+    .rosters-grid-layout, .software-row {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+}

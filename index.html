@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Anadolu (TANU) | Esport</title>
+    <!-- Beyaz Parlama (Flash) Önleme Scripti -->
+    <script>
+        const savedTheme = localStorage.getItem('tanu_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <!-- Google Fonts: Rajdhani & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome (Instagram Logosu İçin) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Üst Menü (Navbar) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">TANU</span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="active" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="kadrolar.html" data-tr="Kadrolar" data-en="Rosters">Kadrolar</a>
+                <a href="hakkimizda.html" data-tr="Biz Kimiz" data-en="About Us">Biz Kimiz</a>
+                <a href="iletisim.html" data-tr="İletişim" data-en="Contact">İletişim</a>
+            </nav>
+
+            <!-- Sağ Üst Kontroller -->
+            <div class="nav-controls">
+                <button id="theme-toggle" class="control-btn" title="Tema Değiştir">🌙</button>
+                
+                <div class="lang-dropdown">
+                    <button id="lang-btn" class="control-btn">TR ▾</button>
+                    <div class="lang-menu" id="lang-menu">
+                        <a href="#" data-lang="tr">Türkçe</a>
+                        <a href="#" data-lang="en">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ana Sayfa (Hero Section & İnteraktif Kadro Slider) -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-header">
+                <h1 data-tr="TEAM ANADOLU" data-en="TEAM ANADOLU">TEAM ANADOLU</h1>
+                <a href="hakkimizda.html" class="about-btn" data-tr="Bizim Hakkımızda" data-en="About Us">Bizim Hakkımızda →</a>
+            </div>
+
+            <!-- İnteraktif Kadro Slider Alanı -->
+            <div class="roster-carousel">
+                <div class="roster-card" onclick="handleCardClick(0)" data-index="0">
+                    <h3 data-tr="Gelişim" data-en="Development">Gelişim</h3>
+                </div>
+                <div class="roster-card" onclick="handleCardClick(1)" data-index="1">
+                    <h3 data-tr="Talents" data-en="Talents">Talents</h3>
+                </div>
+                <div class="roster-card" onclick="handleCardClick(2)" data-index="2">
+                    <h3 data-tr="Valorant" data-en="Valorant">Valorant</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biz Kimiz (About Us Section) -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 data-tr="BİZ KİMİZ" data-en="ABOUT US">BİZ KİMİZ</h2>
+            <p data-tr="Team Anadolu (TANU); konsolda en üst düzeyde rekabet etmek isteyen ve aynı zamanda yazılım ile uğraşan, yenilikçi bir organizasyondur." 
+               data-en="Team Anadolu (TANU) is a disciplined and innovative organization that aims to compete at the highest level on console while also engaging in software development.">
+                Team Anadolu (TANU); konsolda en üst düzeyde rekabet etmek isteyen ve aynı zamanda yazılım ile uğraşan, yenilikçi bir organizasyondur.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer (Alt Kısım) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">TANU</div>
+            <p class="footer-email">iletisim.teamanadolu@gmail.com</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/teamanadolu_/" target="_blank" class="social-icon" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/TeamAnadolu_" target="_blank" class="svg-social-icon" title="X (Twitter)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2026 Team Anadolu (TANU)</p>
+        </div>
+    </footer>
+
+    <!-- Kalıcı Tema ve Dil Scripti -->
+    <script>
+        const htmlElement = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const langBtn = document.getElementById('lang-btn');
+        const langMenu = document.getElementById('lang-menu');
+
+        // Hafızadaki tercihleri yükle
+        const currentTheme = localStorage.getItem('tanu_theme') || 'light';
+        const currentLang = localStorage.getItem('tanu_lang') || 'tr';
+
+        htmlElement.setAttribute('data-theme', currentTheme);
+        if (themeToggle) {
+            themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+        if (currentLang === 'en') {
+            setLanguage('en');
+        }
+
+        // Tema Değiştirme
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const activeTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+                localStorage.setItem('tanu_theme', newTheme);
+            });
+        }
+
+        // Dil Menüsü
+        if (langBtn && langMenu) {
+            langBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            window.addEventListener('click', () => {
+                langMenu.style.display = 'none';
+            });
+
+            document.querySelectorAll('.lang-menu a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedLang = e.target.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    localStorage.setItem('tanu_lang', selectedLang);
+                });
+            });
+        }
+
+        function setLanguage(lang) {
+            if (langBtn) {
+                langBtn.textContent = lang.toUpperCase() + ' ▾';
+            }
+            document.querySelectorAll('[data-tr]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.textContent = text;
+            });
+        }
+
+        // Slider Mantığı
+        const cards = document.querySelectorAll('.roster-card');
+        let activeIndex = 1;
+
+        function updateSlider() {
+            cards.forEach((card) => {
+                const cardIdx = parseInt(card.getAttribute('data-index'));
+                card.classList.remove('active', 'left', 'right');
+
+                if (cardIdx === activeIndex) {
+                    card.classList.add('active');
+                } else if ((cardIdx === (activeIndex - 1 + 3) % 3)) {
+                    card.classList.add('left');
+                } else {
+                    card.classList.add('right');
+                }
+            });
+        }
+
+        function handleCardClick(clickedIndex) {
+            if (clickedIndex === activeIndex) {
+                window.location.href = 'kadrolar.html';
+            } else {
+                activeIndex = clickedIndex;
+                updateSlider();
+            }
+        }
+
+        updateSlider();
+    </script>
+</body>
+</html>
